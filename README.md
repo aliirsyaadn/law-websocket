@@ -13,7 +13,7 @@ node utils/mq_worker.js
 In Another Terminal
 
 ```
-npm run dev
+npm start
 ```
 
 Go to localhost:3000
