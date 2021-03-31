@@ -14,7 +14,7 @@ amqp.connect('amqp://localhost', (error0, connection) => {
       durable: true,
     });
     channel.prefetch(1);
-    console.log(' [*] Waiting for messages in %s. To exit press CTRL+C', queue);
+    console.log(`Waiting for messages in ${queue}. To exit press CTRL+C`);
     channel.consume(
       queue,
       (msg) => {
@@ -22,7 +22,7 @@ amqp.connect('amqp://localhost', (error0, connection) => {
 
         console.log(` Task : ${msg.content.toString()}`);
         setTimeout(() => {
-          console.log(' [x] Done');
+          console.log('Task Completed');
           channel.ack(msg);
         }, secs * 1000);
       },

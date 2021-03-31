@@ -23,7 +23,7 @@ function userLeave(id) {
 
   if (index !== -1) {
     const user = users.find((user) => user.id === id);
-    sendTask(`[REMOVE USER] ${user.id}:${user.username} in ${user.room}`);
+    sendTask(`[REMOVE USER] ${user.username} in ${user.room}`);
     return users.splice(index, 1)[0];
   }
 }
